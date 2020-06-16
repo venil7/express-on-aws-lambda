@@ -1,0 +1,21 @@
+{
+  "name": "express-lambda-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "rm express-lambda-test.zip && zip -x .\\* -r9  ./express-lambda-test.zip ./",
+    "deploy": "npm run build && terraform apply",
+    "local": "nodemon src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.8",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
